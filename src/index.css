@@ -1,13 +1,222 @@
-body {
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+
+  /* prevent text selection for all browsers  */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+*,
+::after,
+::before {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* setting varibales*/
+#root {
+  --hf-bg-color: #203040; /* hf = header and footer */
+  --main-text-color: #ffffff;
+}
+
+/* utility classes and same style  */
+a {
+  text-decoration: none;
+  color: var(--main-text-color);
+  transition: 0.6ms ease;
+  cursor: pointer;
+}
+a:hover {
+  color: yellowgreen;
+}
+li {
+  list-style: none;
+}
+button {
+  cursor: pointer;
+}
+
+/* grid container  */
+.grid-contaainer {
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: 1rem 1fr 4rem;
+  grid-template-columns: 1fr;
+}
+
+/* header css  */
+header {
+  grid-area: header;
+  background-color: var(--hf-bg-color);
+  display: flex;
+  align-items: center;
+}
+
+/* main css  */
+main {
+  grid-area: main;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main {
+  flex: 3 60%;
+}
+.sidebar {
+  flex: 1 20%;
+}
+
+/* Products components  */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+.products li {
+  flex: 0 1 20rem;
+  padding: 1em;
+}
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  margin-bottom: 0.6em;
+}
+.product img {
+  max-height: 28rem;
+  max-height: 28rem;
+}
+.product a {
+  color: black;
+}
+.product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.product-price h3,
+.button-primary {
+  flex: 1;
+}
+.button-primary {
+  padding: 0.8em;
+  border: 2px solid #c0c0c0;
+  cursor: pointer;
+  background: #ffc000;
+  transition: 0.2s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.button-primary:hover {
+  border: 2px solid black;
+}
+
+/* filter component  */
+.filter {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  margin: 1em;
+  border-bottom: 2px solid grey;
+}
+.filter div {
+  flex: 1;
+}
+
+/* cart css  */
+.cart {
+  padding: 1em;
+  margin: 1em;
+  display: flex;
+  flex-wrap: wrap;
+}
+.cart-header {
+  border-bottom: 2px solid gray;
+}
+.cart-items img {
+  width: 5rem;
+}
+.cart-items li {
+  display: flex;
+}
+.cart-items li div {
+  padding: 0.5em;
+}
+.cart-items li .right {
+  flex: 1;
+}
+.right {
+  text-align: left;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+.removebtn {
+  max-height: 2rem;
+  width: auto;
+}
+
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.total > div {
+  font-size: 1.5rem;
+}
+.total > div,
+.total > button {
+  flex: 1;
+}
+
+.extraadd {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.extraadd button {
+  height: auto;
+  width: auto;
+  font-size: 1.5rem;
+  border-radius: 50%;
+}
+.extraadd button {
+  background: #ffc000;
+  border: 2px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.05em;
+}
+.extraadd button:hover {
+  border: 2px solid black;
+}
+
+/* main css end here  */
+
+/* footer css  */
+footer {
+  grid-area: footer;
+  background-color: var(--hf-bg-color);
+  color: var(--main-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
