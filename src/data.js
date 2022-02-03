@@ -48,8 +48,8 @@ export const kurtis = [
 
 export const juttis = [
   {
-    id: "jutti1",
-    image: "/images/Juttis/jutti1.jpg",
+    id: "jutticopied",
+    image: "/images/Juttis/jutti5.jpg",
     title: "Midi sundress with shirring detail",
     description:
       "This is for all the latest trends, no matter who you are, where you’re from and what you’re up to. Exclusive to ASOS, our universal brand is here for you, and comes in all our fit ranges: ASOS Curve, Tall, Petite and Maternity. Created by us, styled by you.",
@@ -214,7 +214,7 @@ export const cardData = [
   {
     name: "Juttis",
     desc: "",
-    image: "/images/Juttis/jutti1.jpg",
+    image: "/images/Juttis/jutti5.jpg",
   },
   {
     name: "Potlis",
